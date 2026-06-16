@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nuthara & Chamila – Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --blush:    #f0c4d0;
+  --rose:     #c97a8e;
+  --deep:     #c04a6a;
+  --magenta:  #cc1fa0;
+  --cream:    #fff8f5;
+  --gold:     #c9a96e;
+  --dark:     #3a1a26;
+  --mid:      #7a2040;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background:#e8e0e4;
+  font-family:'Cormorant Garamond',serif;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+}
+
+/* ── PHONE WRAPPER ── */
+.phone{
+  width:100%;
+  max-width:420px;
+  background:var(--cream);
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 0 60px rgba(0,0,0,0.3);
+}
+
+/* ── COVER ── */
+#cover{
+  position:fixed;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:100%;max-width:420px;
+  height:100%;
+  z-index:999;
+  background:linear-gradient(160deg,#f9dce6,#fff0f5);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:opacity 1s ease,transform 1s ease;
+   background-image:   linear-gradient(
+    rgba(255, 220, 230, 0.8),
+    rgba(255, 235, 240, 0.8)
+  ),
+  url('p8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: opacity 1s ease, transform 1s ease;
+}
+#cover.gone{opacity:0;pointer-events:none;transform:translateX(-50%) scale(1.04);}
+.cover-crown{font-size:3rem;margin-bottom:1rem;animation:float 3s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.cover-title{
+  font-family:'Great Vibes',cursive;
+  font-size:3.5rem;color:var(--mid);
+  text-shadow:0 0 40px rgba(204,31,160,0.7);
+  text-align:center;line-height:1;
+}
+.cover-and{display:block;font-size:2rem;color:var(--gold);}
+.cover-sub{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--mid);
+  opacity:0.6;margin-top:1rem;
+}
+.tap-hint{
+  position:absolute;bottom:2rem;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--mid);
+  opacity:0.5;animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
+.cover-petal{
+  position:absolute;
+  border-radius:50% 50% 50% 10%/50% 50% 30% 50%;
+  opacity:0;
+  animation:cpfall linear infinite;
+}
+@keyframes cpfall{
+  0%{transform:translateY(-50px) rotate(0deg);opacity:0;}
+  10%{opacity:0.7;}90%{opacity:0.4;}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0;}
+}
+
+/* ── SECTIONS ── */
+section{width:100%;position:relative;}
+
+/* FLORAL DIVIDER SVG */
+.floral-row{
+  width:100%;
+  display:flex;justify-content:center;
+  padding:0.5rem 0;
+  overflow:hidden;
+}
+.floral-row img,.floral-row svg{max-width:90%;opacity:0.85;}
+
+/* ── HERO PHOTO ── */
+.hero-photo{
+  width:100%;height:320px;
+  background:linear-gradient(160deg,#f9dce6,#fff0f5);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo-placeholder{
+  text-align:center;
+  font-family:'Great Vibes',cursive;
+  font-size:2rem;color:var(--rose);opacity:0.5;
+}
+.hero-photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(58,26,38,0.6));
+  padding:2rem 1rem 1rem;
+  text-align:center;
+}
+.hero-photo-label span{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:white;opacity:0.8;
+}
+
+/* QUOTE */
+.quote-section{
+  background:white;
+  padding:2rem 2.5rem;
+  text-align:center;
+}
+.quote-text{
+  font-style:italic;font-weight:300;
+  font-size:0.95rem;line-height:1.9;
+  color:var(--mid);
+  position:relative;
+}
+.quote-text::before{
+  content:'"';
+  font-family:'Great Vibes',cursive;
+  font-size:4rem;color:var(--blush);
+  position:absolute;top:-1.5rem;left:-0.5rem;
+  line-height:1;
+}
+
+/* NAME BLOCK */
+.name-block{
+  background:white;
+  padding:2rem 1rem 1.5rem;
+  text-align:center;
+  border-top:1px solid rgba(201,122,142,0.15);
+}
+.name-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--rose);
+  margin-bottom:0.5rem;
+}
+.big-name{
+  font-family:'Great Vibes',cursive;
+  font-size:3.2rem;color:var(--deep);
+  line-height:1.1;
+}
+
+/* INVITE TEXT */
+.invite-text{
+  background:white;
+  padding:1.5rem 2.5rem 2rem;
+  text-align:center;
+  font-size:0.9rem;font-weight:300;
+  line-height:2;color:var(--mid);
+}
+.invite-text strong{
+  display:block;font-weight:600;font-size:1rem;
+  color:var(--deep);letter-spacing:0.05em;
+  margin-top:0.3rem;
+}
+
+/* DATE BLOCK */
+.date-block{
+  background:white;
+  padding:1.5rem 1rem 2rem;
+  text-align:center;
+  border-top:1px solid rgba(201,122,142,0.1);
+}
+.date-month{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--rose);
+  margin-bottom:0.3rem;font-weight:500;
+}
+.date-day-row{
+  display:flex;align-items:baseline;
+  justify-content:center;gap:0.5rem;
+  margin:0.2rem 0;
+}
+.date-weekday{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--rose);
+  font-weight:500;
+}
+.date-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem;font-weight:300;
+  color:var(--deep);line-height:1;
+
+}
+.date-year{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;letter-spacing:0.3em;
+  color:var(--rose);
+  font-weight: 500;
+}
+
+
+/* PHOTO GRID */
+.photo-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;background:#e0c5cf;
+}
+.photo-grid .ph{
+  height:180px;
+  background:linear-gradient(135deg,#f9dce6,#fce8f0);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Great Vibes',cursive;
+  font-size:1.3rem;color:var(--rose);opacity:0.6;
+}
+.photo-grid .ph.full{grid-column:1/-1;height:220px;}
+
+/* ── VENUE SECTION ── */
+.venue-section{
+  background:white;
+  padding:2rem 1.5rem;
+  text-align:center;
+}
+.venue-icon{font-size:2rem;margin-bottom:0.5rem;}
+.venue-type{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--rose);
+  margin-bottom:0.4rem;font-weight:500;
+}
+.venue-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:600;color:var(--dark);
+  margin-bottom:0.2rem;
+}
+.venue-addr{
+  font-style:italic;font-size:0.9rem;
+  color:var(--rose);margin-bottom:1rem;
+}
+.venue-btn{
+  display:inline-block;
+  padding:0.5rem 1.8rem;
+  background:linear-gradient(135deg,var(--deep),var(--magenta));
+  color:white;border-radius:50px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;letter-spacing:0.2em;
+  text-transform:uppercase;
+  text-decoration:none;cursor:pointer;border:none;
+  box-shadow:0 4px 20px rgba(192,74,106,0.3);
+  transition:all 0.3s;
+}
+.venue-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(192,74,106,0.5);}
+.venue-divider{
+  width:80%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blush),transparent);
+  margin:1.5rem auto;
+}
+
+/* ── ITINERARY ── */
+.itinerary-section{
+  background:white;
+  padding:2rem 1.5rem;
+}
+.section-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--rose);
+  text-align:center;margin-bottom:1.5rem;
+  font-weight:500;
+}
+.timeline{position:relative;padding-left:1rem;}
+.timeline::before{
+  content:'';
+  position:absolute;left:2.2rem;top:0;bottom:0;
+  width:1px;background:linear-gradient(var(--blush),var(--rose),var(--blush));
+}
+.tl-item{
+  display:flex;align-items:flex-start;
+  gap:1rem;margin-bottom:1.5rem;position:relative;
+}
+.tl-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blush),var(--rose));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+  box-shadow:0 2px 10px rgba(201,122,142,0.3);
+  position:relative;z-index:1;
+}
+.tl-content{padding-top:0.3rem;}
+.tl-time{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;letter-spacing:0.15em;
+  color:var(--rose);font-weight:500;
+}
+.tl-label{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:600;
+  color:var(--dark);
+}
+
+/* ── RSVP ── */
+.rsvp-section{
+  background:linear-gradient(160deg,#fff0f5,var(--cream));
+  padding:2rem 1.5rem;text-align:center;
+}
+.phone-icon{font-size:2rem;margin-bottom:0.5rem;}
+.rsvp-btn{
+  display:inline-block;
+  margin-top:1rem;
+  padding:0.8rem 2.5rem;
+  background:linear-gradient(135deg,var(--deep),var(--magenta));
+  color:white;border-radius:50px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;letter-spacing:0.25em;
+  text-transform:uppercase;cursor:pointer;border:none;
+  box-shadow:0 6px 25px rgba(192,74,106,0.35);
+  transition:all 0.3s;
+}
+.rsvp-btn:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(204,31,160,0.5);}
+
+/* ── THANKS / FOOTER ── */
+.thanks-section{
+  background:white;
+  padding:2.5rem 1.5rem 3rem;
+  text-align:center;
+  border-top:1px solid var(--blush);
+}
+.thanks-line{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;letter-spacing:0.4em;
+  text-transform:uppercase;color:var(--rose);
+  margin-bottom:1rem;opacity:0.8;
+}
+.thanks-name{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;color:var(--deep);
+}
+.thanks-footer{
+  background:var(--dark);
+  padding:1.5rem;text-align:center;
+}
+.thanks-footer span{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;letter-spacing:0.3em;
+  color:var(--blush);opacity:0.4;
+  text-transform:uppercase;
+}
+
+/* FLORAL SVG decorations */
+.floral-decor{
+  width:100%;
+  padding:1rem 0;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* Floating petals on main */
+.petal{
+  position:fixed;pointer-events:none;z-index:0;
+  border-radius:50% 50% 50% 10%/50% 50% 30% 50%;
+  opacity:0;
+  animation:petalfall linear infinite;
+}
+@keyframes petalfall{
+  0%{transform:translateY(-60px) rotate(0deg);opacity:0;}
+  8%{opacity:0.6;}92%{opacity:0.3;}
+  100%{transform:translateY(110vh) rotate(540deg);opacity:0;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div id="cover" onclick="openInvitation()">
+  <div class="cover-title">
+    Nuthara
+    <span class="cover-and">&amp;</span>
+    Chamila
+  </div>
+  <div class="cover-sub">Wedding Invitation</div>
+  <div class="tap-hint">✦ Tap to Open ✦</div>
+</div>
+
+<!-- MAIN -->
+<div class="phone" id="main" style="opacity:0;transition:opacity 1.2s ease 0.4s;">
+
+  <!-- 1. HERO PHOTO PLACEHOLDER -->
+  <div class="hero-photo">
+    <div class="hero-photo-placeholder">
+      📷<br><img src="p1.jpg" alt="Couple Photo" style="width:100%;height:auto;">
+    </div>
+    <div class="hero-photo-label"><span>The Wedding of</span></div>
+  </div>
+
+  <!-- FLORAL -->
+  <div class="floral-decor">
+    <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+      <!-- left leaves -->
+      <ellipse cx="40" cy="45" rx="22" ry="10" fill="#c97a8e" opacity="0.25" transform="rotate(-30 40 45)"/>
+      <ellipse cx="25" cy="38" rx="18" ry="8" fill="#f0c4d0" opacity="0.4" transform="rotate(-50 25 38)"/>
+      <!-- left flowers -->
+      <circle cx="60" cy="35" r="12" fill="#f0c4d0" opacity="0.5"/>
+      <circle cx="60" cy="35" r="7" fill="#c97a8e" opacity="0.6"/>
+      <circle cx="78" cy="28" r="9" fill="#f7d6e3" opacity="0.6"/>
+      <circle cx="78" cy="28" r="5" fill="#c04a6a" opacity="0.5"/>
+      <!-- center divider -->
+      <line x1="100" y1="40" x2="140" y2="40" stroke="#c97a8e" stroke-width="0.8" opacity="0.4"/>
+      <path d="M155,40 C158,32 162,28 160,40 C162,28 166,32 169,40" fill="none" stroke="#c9a96e" stroke-width="1.2" opacity="0.7"/>
+      <line x1="175" y1="40" x2="215" y2="40" stroke="#c97a8e" stroke-width="0.8" opacity="0.4"/>
+      <!-- right flowers (mirror) -->
+      <circle cx="235" cy="28" r="9" fill="#f7d6e3" opacity="0.6"/>
+      <circle cx="235" cy="28" r="5" fill="#c04a6a" opacity="0.5"/>
+      <circle cx="253" cy="35" r="12" fill="#f0c4d0" opacity="0.5"/>
+      <circle cx="253" cy="35" r="7" fill="#c97a8e" opacity="0.6"/>
+      <!-- right leaves -->
+      <ellipse cx="278" cy="38" rx="18" ry="8" fill="#f0c4d0" opacity="0.4" transform="rotate(50 278 38)"/>
+      <ellipse cx="293" cy="45" rx="22" ry="10" fill="#c97a8e" opacity="0.25" transform="rotate(30 293 45)"/>
+    </svg>
+  </div>
+
+  <!-- 2. QUOTE -->
+  <div class="quote-section">
+    <div class="quote-text">
+      There are unforgettable moments that are treasured in the heart forever. For that reason, we want you to share this special day with us.
+    </div>
+  </div>
+
+  <!-- 3. NAME + CROWN -->
+  <div class="name-block">
+    <div class="name-tag">The Wedding of</div>
+    <div style="font-size:2rem;margin:0.3rem 0;">💍</div>
+    <div class="big-name">Nuthara</div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.7rem;letter-spacing:0.3em;color:var(--gold);margin:0.3rem 0;">&amp;</div>
+    <div class="big-name">Chamila</div>
+  </div>
+
+  <!-- 5. INVITE TEXT -->
+  <div class="invite-text">
+    With the blessing of God and the love of their families, they invite you to celebrate this special moment:
+    <strong>Their Wedding Day</strong>
+  </div>
+
+  <!-- 6. DATE -->
+  <div class="date-block">
+    <div class="date-month">January</div>
+    <div class="date-day-row">
+      <span class="date-weekday">Thursday</span>
+      <span class="date-num">14</span>
+      <span class="date-year">2027</span>
+    </div>
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.3em;color:var(--rose);opacity:0.6;text-transform:uppercase;font-weight: 400;">9:00 AM - 4:00 PM</div>
+  </div>
+
+  <!-- FLORAL -->
+  <div class="floral-decor" style="background:white;">
+    <svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+      <ellipse cx="30" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(-40 30 35)"/>
+      <circle cx="55" cy="28" r="10" fill="#f0c4d0" opacity="0.55"/>
+      <circle cx="55" cy="28" r="6" fill="#c97a8e" opacity="0.55"/>
+      <circle cx="72" cy="22" r="7" fill="#f7d6e3" opacity="0.6"/>
+      <line x1="88" y1="30" x2="232" y2="30" stroke="#c97a8e" stroke-width="0.6" opacity="0.3"/>
+      <circle cx="248" cy="22" r="7" fill="#f7d6e3" opacity="0.6"/>
+      <circle cx="265" cy="28" r="10" fill="#f0c4d0" opacity="0.55"/>
+      <circle cx="265" cy="28" r="6" fill="#c97a8e" opacity="0.55"/>
+      <ellipse cx="290" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(40 290 35)"/>
+    </svg>
+  </div>
+
+  <!-- 8. PHOTO GRID -->
+  <div class="photo-grid">
+    <div class="ph full"><img src="p2.jpg" alt="Couple Photo" style="width:100%;height:auto;"></div>
+  </div>
+<br><br><br><br><br><br><br><br><br>
+  <!-- 9. VENUE – CEREMONY -->
+  <div class="venue-section">
+    <div class="section-title">— The Venues —</div>
+    <div class="venue-type">Poruwa Ceremony</div>
+    <div class="venue-name">Hotel Sundara</div>
+    <div class="venue-addr">Kaluthara , North</div>
+    <a class="venue-btn" href="https://maps.app.goo.gl/hQUTHzQXDUtGswMS8?g_st=aw" target="_blank">📍 View Location</a>
+
+  <!-- FLORAL -->
+  <div class="floral-decor" style="background:white;border-top:1px solid rgba(201,122,142,0.1);">
+    <svg viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
+      <circle cx="60" cy="40" r="15" fill="#f0c4d0" opacity="0.45"/>
+      <circle cx="60" cy="40" r="9" fill="#c04a6a" opacity="0.4"/>
+      <circle cx="82" cy="30" r="10" fill="#f7d6e3" opacity="0.5"/>
+      <ellipse cx="40" cy="50" rx="16" ry="7" fill="#c97a8e" opacity="0.2" transform="rotate(-35 40 50)"/>
+      <line x1="98" y1="38" x2="222" y2="38" stroke="#c97a8e" stroke-width="0.5" opacity="0.3"/>
+      <ellipse cx="280" cy="50" rx="16" ry="7" fill="#c97a8e" opacity="0.2" transform="rotate(35 280 50)"/>
+      <circle cx="238" cy="30" r="10" fill="#f7d6e3" opacity="0.5"/>
+      <circle cx="260" cy="40" r="15" fill="#f0c4d0" opacity="0.45"/>
+      <circle cx="260" cy="40" r="9" fill="#c04a6a" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- 10. ITINERARY -->
+  <div class="itinerary-section">
+    <div class="section-title">— Schedule of Events —</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-icon">💗</div>
+        <div class="tl-content">
+          <div class="tl-time">09:12 AM</div>
+          <div class="tl-label">Registration</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon">💗</div>
+        <div class="tl-content">
+          <div class="tl-time">10:02 PM</div>
+          <div class="tl-label">Poruwa ceremony</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon">💗</div>
+        <div class="tl-content">
+          <div class="tl-time">04:00 PM</div>
+          <div class="tl-label">Departure time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FLORAL -->
+  <div class="floral-decor" style="background:linear-gradient(160deg,#fff0f5,white);border-top:1px solid rgba(201,122,142,0.1);">
+    <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+      <ellipse cx="35" cy="55" rx="25" ry="11" fill="#c97a8e" opacity="0.18" transform="rotate(-30 35 55)"/>
+      <ellipse cx="18" cy="45" rx="20" ry="9" fill="#f0c4d0" opacity="0.3" transform="rotate(-50 18 45)"/>
+      <circle cx="65" cy="38" r="14" fill="#f0c4d0" opacity="0.5"/>
+      <circle cx="65" cy="38" r="8" fill="#c97a8e" opacity="0.55"/>
+      <circle cx="88" cy="28" r="10" fill="#f7d6e3" opacity="0.6"/>
+      <circle cx="88" cy="28" r="6" fill="#c04a6a" opacity="0.45"/>
+      <circle cx="232" cy="28" r="10" fill="#f7d6e3" opacity="0.6"/>
+      <circle cx="232" cy="28" r="6" fill="#c04a6a" opacity="0.45"/>
+      <circle cx="255" cy="38" r="14" fill="#f0c4d0" opacity="0.5"/>
+      <circle cx="255" cy="38" r="8" fill="#c97a8e" opacity="0.55"/>
+      <ellipse cx="285" cy="45" rx="20" ry="9" fill="#f0c4d0" opacity="0.3" transform="rotate(50 285 45)"/>
+      <ellipse cx="302" cy="55" rx="25" ry="11" fill="#c97a8e" opacity="0.18" transform="rotate(30 302 55)"/>
+    </svg>
+  </div>
+
+  <!-- 13. RSVP -->
+  <div class="rsvp-section">
+    <div class="phone-icon">📞</div>
+    <div class="section-title">— Confirm Attendance —</div>
+    <button class="rsvp-btn" onclick="rsvpClick()">♥ &nbsp; Confirm Here &nbsp; ♥</button>
+  </div>
+
+  <!-- 14. THANKS -->
+  <div class="thanks-section">
+    <div style="font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--rose);margin-bottom:0.5rem;opacity:0.7;">
+      We hope to count on your presence
+    </div>
+
+    <!-- Large floral decoration -->
+    <div style="margin:1rem 0;">
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" style="width:180px;">
+        <ellipse cx="30" cy="70" rx="28" ry="12" fill="#c97a8e" opacity="0.2" transform="rotate(-35 30 70)"/>
+        <circle cx="55" cy="55" r="18" fill="#f0c4d0" opacity="0.5"/>
+        <circle cx="55" cy="55" r="11" fill="#c97a8e" opacity="0.5"/>
+        <circle cx="80" cy="42" r="13" fill="#f7d6e3" opacity="0.6"/>
+        <circle cx="80" cy="42" r="8" fill="#c04a6a" opacity="0.45"/>
+        <circle cx="100" cy="38" r="10" fill="#f0c4d0" opacity="0.6"/>
+        <circle cx="120" cy="42" r="13" fill="#f7d6e3" opacity="0.6"/>
+        <circle cx="120" cy="42" r="8" fill="#c04a6a" opacity="0.45"/>
+        <circle cx="145" cy="55" r="18" fill="#f0c4d0" opacity="0.5"/>
+        <circle cx="145" cy="55" r="11" fill="#c97a8e" opacity="0.5"/>
+        <ellipse cx="170" cy="70" rx="28" ry="12" fill="#c97a8e" opacity="0.2" transform="rotate(35 170 70)"/>
+      </svg>
+    </div>
+
+    <div class="thanks-name">Thank You!</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--rose);margin-top:0.5rem;font-weight:300;">
+      — Nuthara &amp; Chamila —
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="thanks-footer">
+    <span>January 14 · 2027 · Kaluthara, Sri Lanka</span>
+  </div>
+
+</div><!-- /phone -->
+
+<script>
+// ── COVER PETALS ──
+const cover=document.getElementById('cover');
+const pc=['#f0c4d0','#c97a8e','#c04a6a','#e8a0b8','#f7d6e3'];
+for(let i=0;i<25;i++){
+  const p=document.createElement('div');
+  p.classList.add('cover-petal');
+  const s=10+Math.random()*14;
+  p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 30%,#c04a6a 100%);animation-duration:${4+Math.random()*6}s;animation-delay:${Math.random()*6}s;`;
+  cover.appendChild(p);
+}
+
+// ── OPEN ──
+function openInvitation(){
+  cover.classList.add('gone');
+  const m=document.getElementById('main');
+  m.style.opacity='1';
+  spawnConfetti();
+  startPetals();
+}
+
+// ── CONFETTI ──
+function spawnConfetti(){
+  const cc=['#f0c4d0','#c97a8e','#c04a6a','#cc1fa0','#c9a96e','#fff'];
+  for(let i=0;i<70;i++){
+    const c=document.createElement('div');
+    c.style.cssText=`
+      position:fixed;z-index:500;pointer-events:none;
+      left:${40+Math.random()*20}vw;top:40vh;
+      width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;
+      background:${cc[Math.floor(Math.random()*cc.length)]};
+      border-radius:${Math.random()>.5?'50%':'2px'};
+      opacity:1;
+      transition:none;
+      animation:cf${i} ${2+Math.random()}s ease forwards;
+    `;
+    const tx=(Math.random()-.5)*400,ty=Math.random()*600,r=(Math.random()*1080-540);
+    const style=document.createElement('style');
+    style.textContent=`@keyframes cf${i}{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(${tx}px,${ty}px) rotate(${r}deg) scale(.4)}}`;
+    document.head.appendChild(style);
+    document.body.appendChild(c);
+    setTimeout(()=>{c.remove();style.remove();},3000);
+  }
+}
+
+// ── PETALS ──
+function startPetals(){
+  const main=document.getElementById('main');
+  for(let i=0;i<15;i++){
+    const p=document.createElement('div');
+    p.classList.add('petal');
+    const s=8+Math.random()*12;
+    p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 40%,#c04a6a 100%);animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*8}s;`;
+    main.appendChild(p);
+  }
+}
+
+// ── COUNTDOWN ──
+function tick(){
+  const w=new Date('2025-06-14T18:00:00'),n=new Date(),d=w-n;
+  if(d<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');return;}
+  document.getElementById('cd-d').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');
+}
+setInterval(tick,1000);tick();
+
+// ── MUSIC ──
+let playing=false;
+function togglePlay(){
+  const a=document.getElementById('bgMusic');
+  const b=document.getElementById('playBtn');
+  if(playing){a.pause();b.textContent='▶';playing=false;}
+  else{a.play().catch(()=>{});b.textContent='⏸';playing=true;}
+}
+
+// ── RSVP ──
+function rsvpClick(){
+  spawnConfetti();
+  setTimeout(()=>alert('Thank you so much! ♥\n\nWe are overjoyed to celebrate with you!\n\n— Nuthara & Chamila'),300);
+}
+</script>
+</body>
+</html>
