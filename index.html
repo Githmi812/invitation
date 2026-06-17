@@ -524,6 +524,7 @@ section{width:100%;position:relative;}
       <ellipse cx="290" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(40 290 35)"/>
     </svg>
   </div>
+
   <!-- 7. COUNTDOWN -->
   <div class="countdown-block">
     <div class="countdown-label">✦ Days Remaining ✦</div>
@@ -537,6 +538,7 @@ section{width:100%;position:relative;}
       <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Sec</div></div>
     </div>
   </div>
+  
   <!-- 8. PHOTO GRID -->
   <div class="photo-grid">
     <div class="ph full"><img src="p2.jpg" alt="Couple Photo" style="width:100%;height:auto;"></div>
@@ -614,7 +616,63 @@ section{width:100%;position:relative;}
   <div class="rsvp-section">
     <div class="phone-icon">📞</div>
     <div class="section-title">— Confirm Attendance —</div>
-    <button class="rsvp-btn" onclick="rsvpClick()">♥ &nbsp; Confirm Here &nbsp; ♥</button>
+    <!-- Live guest counter -->
+    <div id="guest-counter" style="margin-bottom:1rem;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);opacity:0.8;">
+      <span id="counter-text">Loading...</span>
+    </div>
+    <button class="rsvp-btn" onclick="openRsvpModal()">♥ &nbsp; Confirm Here &nbsp; ♥</button>
+  </div>
+
+  <!-- RSVP MODAL -->
+  <div id="rsvp-modal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(58,26,38,0.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+    <div style="background:var(--cream);border-radius:20px;padding:2rem 1.5rem;width:90%;max-width:380px;box-shadow:0 20px 60px rgba(192,74,106,0.35);position:relative;animation:fadeUp 0.4s ease;">
+      <button onclick="closeRsvpModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--rose);line-height:1;">✕</button>
+      <div style="text-align:center;margin-bottom:1.2rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.3rem;">💍</div>
+        <div style="font-family:'Great Vibes',cursive;font-size:1.8rem;color:var(--deep);">Confirm Attendance</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--rose);opacity:0.7;margin-top:0.3rem;">Nuthara &amp; Chamila · Jan 14, 2027</div>
+      </div>
+
+      <div id="rsvp-success" style="display:none;text-align:center;padding:1rem 0;">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🎉</div>
+        <div style="font-family:'Great Vibes',cursive;font-size:1.6rem;color:var(--deep);" id="success-name"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--mid);margin-top:0.5rem;font-size:0.95rem;">We are overjoyed to celebrate with you! ♥</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--rose);margin-top:1rem;" id="success-totals"></div>
+      </div>
+
+      <div id="rsvp-form-wrap">
+        <!-- Name -->
+        <div style="margin-bottom:0.9rem;">
+          <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Your Name *</label>
+          <input id="rsvp-name" type="text" placeholder="Full name" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+        </div>
+        <!-- Phone -->
+        <div style="margin-bottom:0.9rem;">
+          <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Phone Number *</label>
+          <input id="rsvp-phone" type="tel" placeholder="+94 77 000 0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+        </div>
+        <!-- Guests -->
+        <div style="margin-bottom:0.9rem;">
+          <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Number of Guests (incl. yourself)</label>
+          <select id="rsvp-guests" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;appearance:none;cursor:pointer;">
+            <option value="1">1 – Just me</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+          </select>
+        </div>
+        <!-- Message -->
+        <div style="margin-bottom:1.2rem;">
+          <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Message (optional)</label>
+          <textarea id="rsvp-message" rows="2" placeholder="Leave a wish for the couple…" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--dark);background:white;outline:none;resize:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'"></textarea>
+        </div>
+        <!-- Error msg -->
+        <div id="rsvp-error" style="display:none;color:var(--deep);font-family:'Montserrat',sans-serif;font-size:0.7rem;text-align:center;margin-bottom:0.8rem;"></div>
+        <!-- Submit -->
+        <button onclick="submitRsvp()" id="rsvp-submit-btn" style="width:100%;padding:0.85rem;background:linear-gradient(135deg,var(--deep),var(--magenta));color:white;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 25px rgba(192,74,106,0.35);transition:opacity 0.2s;">♥ &nbsp; Confirm Attendance &nbsp; ♥</button>
+      </div>
+    </div>
   </div>
 
   <!-- 14. THANKS -->
@@ -710,16 +768,20 @@ function startPetals(){
   }
 }
 
-// ── COUNTDOWN ──
+// ── COUNTDOWN  (wedding: January 14, 2027 at 9:00 AM) ──
+const WEDDING_DATE = new Date('2027-01-14T09:00:00');
 function tick(){
-  const w=new Date('2025-06-14T18:00:00'),n=new Date(),d=w-n;
-  if(d<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');return;}
+  const d = WEDDING_DATE - new Date();
+  if(d <= 0){
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');
+    return;
+  }
   document.getElementById('cd-d').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
   document.getElementById('cd-h').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
   document.getElementById('cd-m').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
   document.getElementById('cd-s').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');
 }
-setInterval(tick,1000);tick();
+setInterval(tick,1000); tick();
 
 // ── MUSIC ──
 let playing=false;
@@ -730,11 +792,79 @@ function togglePlay(){
   else{a.play().catch(()=>{});b.textContent='⏸';playing=true;}
 }
 
-// ── RSVP ──
-function rsvpClick(){
-  spawnConfetti();
-  setTimeout(()=>alert('Thank you so much! ♥\n\nWe are overjoyed to celebrate with you!\n\n— Nuthara & Chamila'),300);
+// ── RSVP MODAL ──
+function openRsvpModal(){
+  const m=document.getElementById('rsvp-modal');
+  m.style.display='flex';
+  document.body.style.overflow='hidden';
 }
+function closeRsvpModal(){
+  document.getElementById('rsvp-modal').style.display='none';
+  document.body.style.overflow='';
+}
+// Close on backdrop click
+document.getElementById('rsvp-modal').addEventListener('click',function(e){
+  if(e.target===this) closeRsvpModal();
+});
+
+async function submitRsvp(){
+  const name    = document.getElementById('rsvp-name').value.trim();
+  const phone   = document.getElementById('rsvp-phone').value.trim();
+  const guests  = document.getElementById('rsvp-guests').value;
+  const message = document.getElementById('rsvp-message').value.trim();
+  const errEl   = document.getElementById('rsvp-error');
+  const btn     = document.getElementById('rsvp-submit-btn');
+
+  errEl.style.display='none';
+  if(!name){ errEl.textContent='Please enter your name.'; errEl.style.display='block'; return; }
+  if(!phone){ errEl.textContent='Please enter your phone number.'; errEl.style.display='block'; return; }
+
+  btn.textContent='Sending…'; btn.disabled=true; btn.style.opacity='0.7';
+
+  try {
+    // ── Change this URL to your real server path ──
+    const res  = await fetch('api/rsvp.php', {
+      method : 'POST',
+      headers: {'Content-Type':'application/json'},
+      body   : JSON.stringify({ name, phone, guests: parseInt(guests), message })
+    });
+    const data = await res.json();
+
+    if(data.success){
+      spawnConfetti();
+      document.getElementById('rsvp-form-wrap').style.display='none';
+      document.getElementById('success-name').textContent='Thank you, '+name+'!';
+      document.getElementById('success-totals').textContent=
+        data.total_guests+' guests confirmed so far ♥';
+      document.getElementById('rsvp-success').style.display='block';
+      updateCounter(data.total_rsvps, data.total_guests);
+    } else {
+      errEl.textContent = data.error || (data.errors||[]).join(' ');
+      errEl.style.display='block';
+      btn.textContent='♥  Confirm Attendance  ♥'; btn.disabled=false; btn.style.opacity='1';
+    }
+  } catch(err){
+    errEl.textContent='Network error. Please try again.';
+    errEl.style.display='block';
+    btn.textContent='♥  Confirm Attendance  ♥'; btn.disabled=false; btn.style.opacity='1';
+  }
+}
+
+// ── LIVE GUEST COUNTER ──
+function updateCounter(rsvps, guests){
+  const el = document.getElementById('counter-text');
+  if(el) el.textContent = guests > 0
+    ? '✦  '+guests+' guests confirmed so far  ✦'
+    : 'Be the first to confirm!';
+}
+async function loadCounter(){
+  try{
+    const r = await fetch('api/count.php');
+    const d = await r.json();
+    if(d.success) updateCounter(d.total_rsvps, d.total_guests);
+  } catch(e){ /* silent */ }
+}
+loadCounter();
 </script>
 </body>
 </html>
