@@ -225,6 +225,39 @@ section{width:100%;position:relative;}
   font-weight: 500;
 }
 
+/* COUNTDOWN */
+.countdown-block{
+  background:white;
+  padding:1rem 1rem 2rem;
+  text-align:center;
+}
+.countdown-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;letter-spacing:0.5em;
+  text-transform:uppercase;color:var(--rose);
+  margin-bottom:0.8rem;
+}
+.countdown-row{
+  display:flex;align-items:flex-start;
+  justify-content:center;gap:0;
+}
+.cd-unit{text-align:center;min-width:65px;}
+.cd-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.8rem;font-weight:300;
+  color:var(--deep);line-height:1;
+}
+.cd-lbl{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.5rem;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--rose);
+  margin-top:0.2rem;
+}
+.cd-sep{
+  font-size:2.5rem;color:var(--rose);
+  font-weight:200;line-height:1;padding-top:0.1rem;
+  opacity:0.6;
+}
 
 /* PHOTO GRID */
 .photo-grid{
@@ -491,7 +524,19 @@ section{width:100%;position:relative;}
       <ellipse cx="290" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(40 290 35)"/>
     </svg>
   </div>
-
+  <!-- 7. COUNTDOWN -->
+  <div class="countdown-block">
+    <div class="countdown-label">✦ Days Remaining ✦</div>
+    <div class="countdown-row">
+      <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl">Days</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Hours</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Min</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Sec</div></div>
+    </div>
+  </div>
   <!-- 8. PHOTO GRID -->
   <div class="photo-grid">
     <div class="ph full"><img src="p2.jpg" alt="Couple Photo" style="width:100%;height:auto;"></div>
