@@ -20,12 +20,24 @@
 }
 
 html{scroll-behavior:smooth;}
-body{
-  background:#e8e0e4;
-  font-family:'Cormorant Garamond',serif;
-  display:flex;
-  justify-content:center;
-  min-height:100vh;
+body {
+  background: #e8e0e4;
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('pb2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.10; 
+  z-index: -1;
 }
 
 /* ── PHONE WRAPPER ── */
@@ -441,6 +453,7 @@ section{width:100%;position:relative;}
 </div>
 
 <!-- MAIN -->
+  
 <div class="phone" id="main" style="opacity:0;transition:opacity 1.2s ease 0.4s;">
 
   <!-- 1. HERO PHOTO PLACEHOLDER -->
@@ -550,6 +563,7 @@ section{width:100%;position:relative;}
     <div class="venue-type">Poruwa Ceremony</div>
     <div class="venue-name">Hotel Sundara</div>
     <div class="venue-addr">Kaluthara , North</div>
+    <img src="ph1.webp" class="img-thumbnail" alt="Hotel" width="300px" height="300px" style="border-radius:12px;margin:0.8rem 0;box-shadow:0 6px 20px rgba(192,74,106,0.3);">
     <a class="venue-btn" href="https://maps.app.goo.gl/hQUTHzQXDUtGswMS8?g_st=aw" target="_blank">📍 View Location</a>
 
   <!-- FLORAL -->
@@ -616,9 +630,9 @@ section{width:100%;position:relative;}
   <div class="rsvp-section">
     <div class="phone-icon">📞</div>
     <div class="section-title">— Confirm Attendance —</div>
-    <!-- Live guest counter -->
-    <div id="guest-counter" style="margin-bottom:1rem;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);opacity:0.8;">
-      <span id="counter-text">Loading...</span>
+     <!--Live guest counter -->
+   <div id="guest-counter" style="margin-bottom:1rem;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);opacity:0.8;">
+      <span id="counter-text">We would love to see you there</span>
     </div>
     <button class="rsvp-btn" onclick="openRsvpModal()">♥ &nbsp; Confirm Here &nbsp; ♥</button>
   </div>
@@ -674,6 +688,7 @@ section{width:100%;position:relative;}
       </div>
     </div>
   </div>
+  
 
   <!-- 14. THANKS -->
   <div class="thanks-section">
@@ -783,15 +798,6 @@ function tick(){
 }
 setInterval(tick,1000); tick();
 
-// ── MUSIC ──
-let playing=false;
-function togglePlay(){
-  const a=document.getElementById('bgMusic');
-  const b=document.getElementById('playBtn');
-  if(playing){a.pause();b.textContent='▶';playing=false;}
-  else{a.play().catch(()=>{});b.textContent='⏸';playing=true;}
-}
-
 // ── RSVP MODAL ──
 function openRsvpModal(){
   const m=document.getElementById('rsvp-modal');
@@ -807,6 +813,9 @@ document.getElementById('rsvp-modal').addEventListener('click',function(e){
   if(e.target===this) closeRsvpModal();
 });
 
+// ── Emails are delivered here (via FormSubmit.co – no backend needed) ──
+const RSVP_EMAIL = 'yovinmaranawaka@gmail.com';
+
 async function submitRsvp(){
   const name    = document.getElementById('rsvp-name').value.trim();
   const phone   = document.getElementById('rsvp-phone').value.trim();
@@ -814,6 +823,7 @@ async function submitRsvp(){
   const message = document.getElementById('rsvp-message').value.trim();
   const errEl   = document.getElementById('rsvp-error');
   const btn     = document.getElementById('rsvp-submit-btn');
+  const label   = '♥  Confirm Attendance  ♥';
 
   errEl.style.display='none';
   if(!name){ errEl.textContent='Please enter your name.'; errEl.style.display='block'; return; }
@@ -822,49 +832,36 @@ async function submitRsvp(){
   btn.textContent='Sending…'; btn.disabled=true; btn.style.opacity='0.7';
 
   try {
-    // ── Change this URL to your real server path ──
-    const res  = await fetch('api/rsvp.php', {
+    const res = await fetch('https://formsubmit.co/ajax/' + RSVP_EMAIL, {
       method : 'POST',
-      headers: {'Content-Type':'application/json'},
-      body   : JSON.stringify({ name, phone, guests: parseInt(guests), message })
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body   : JSON.stringify({
+        _subject : 'Wedding RSVP: ' + name + ' (' + guests + ' guest' + (guests>1?'s':'') + ')',
+        _template: 'table',
+        _captcha : 'false',
+        Name     : name,
+        Phone    : phone,
+        Guests   : guests,
+        Message  : message || '(no message)'
+      })
     });
     const data = await res.json();
 
-    if(data.success){
+    if(res.ok && (data.success === true || data.success === 'true')){
       spawnConfetti();
       document.getElementById('rsvp-form-wrap').style.display='none';
       document.getElementById('success-name').textContent='Thank you, '+name+'!';
-      document.getElementById('success-totals').textContent=
-        data.total_guests+' guests confirmed so far ♥';
+      document.getElementById('success-totals').textContent='Your attendance has been confirmed ♥';
       document.getElementById('rsvp-success').style.display='block';
-      updateCounter(data.total_rsvps, data.total_guests);
     } else {
-      errEl.textContent = data.error || (data.errors||[]).join(' ');
-      errEl.style.display='block';
-      btn.textContent='♥  Confirm Attendance  ♥'; btn.disabled=false; btn.style.opacity='1';
+      throw new Error(data.message || 'Failed');
     }
   } catch(err){
-    errEl.textContent='Network error. Please try again.';
+    errEl.textContent='Could not send. Please check your connection and try again.';
     errEl.style.display='block';
-    btn.textContent='♥  Confirm Attendance  ♥'; btn.disabled=false; btn.style.opacity='1';
+    btn.textContent=label; btn.disabled=false; btn.style.opacity='1';
   }
 }
-
-// ── LIVE GUEST COUNTER ──
-function updateCounter(rsvps, guests){
-  const el = document.getElementById('counter-text');
-  if(el) el.textContent = guests > 0
-    ? '✦  '+guests+' guests confirmed so far  ✦'
-    : 'Be the first to confirm!';
-}
-async function loadCounter(){
-  try{
-    const r = await fetch('api/count.php');
-    const d = await r.json();
-    if(d.success) updateCounter(d.total_rsvps, d.total_guests);
-  } catch(e){ /* silent */ }
-}
-loadCounter();
 </script>
 </body>
 </html>
