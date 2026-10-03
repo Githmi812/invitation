@@ -9,19 +9,27 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
-  --blush:    #f0c4d0;
-  --rose:     #c97a8e;
-  --deep:     #c04a6a;
-  --magenta:  #cc1fa0;
-  --cream:    #fff8f5;
-  --gold:     #c9a96e;
-  --dark:     #3a1a26;
-  --mid:      #7a2040;
+  /* Your palette */
+  --tan:      #C8AC9B;
+  --peach:    #FAD1BB;
+  --mist:     #efe7e4;
+  --paper:    #F7F1E6;
+  --sand:     #EADBC8;
+  --blush:    #FFD1DC;
+  /* Mapped names used across the page */
+  --cream:    #efe7e4;
+  --gold:     #C8AC9B;
+  /* Darker tones of the tan, for text & buttons (readable) */
+  --rose:     #967563;
+  --deep:     #7A5A48;
+  --magenta:  #A38572;
+  --dark:     #4A3A31;
+  --mid:      #6B5244;
 }
 
 html{scroll-behavior:smooth;}
 body {
-  background: #e8e0e4;
+  background: #EADBC8;
   font-family: 'Cormorant Garamond', serif;
   display: flex;
   justify-content: center;
@@ -59,14 +67,14 @@ body::before {
   width:100%;max-width:420px;
   height:100%;
   z-index:999;
-  background:linear-gradient(160deg,#f9dce6,#fff0f5);
+  background:linear-gradient(160deg,#FAD1BB,#efe7e4);
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   cursor:pointer;
   transition:opacity 1s ease,transform 1s ease;
    background-image:   linear-gradient(
-    rgba(255, 220, 230, 0.8),
-    rgba(255, 235, 240, 0.8)
+    rgba(250, 209, 187, 0.8),
+    rgba(239, 231, 228, 0.8)
   ),
   url('p8.jpg');
   background-size: cover;
@@ -81,7 +89,7 @@ body::before {
 .cover-title{
   font-family:'Great Vibes',cursive;
   font-size:3.5rem;color:var(--mid);
-  text-shadow:0 0 40px rgba(204,31,160,0.7);
+  text-shadow:0 0 40px rgba(163,133,114,0.7);
   text-align:center;line-height:1;
 }
 .cover-and{display:block;font-size:2rem;color:var(--gold);}
@@ -126,7 +134,7 @@ section{width:100%;position:relative;}
 /* ── HERO PHOTO ── */
 .hero-photo{
   width:100%;height:320px;
-  background:linear-gradient(160deg,#f9dce6,#fff0f5);
+  background:linear-gradient(160deg,#FAD1BB,#efe7e4);
   position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
 }
@@ -137,7 +145,7 @@ section{width:100%;position:relative;}
 }
 .hero-photo-label{
   position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(transparent,rgba(58,26,38,0.6));
+  background:linear-gradient(transparent,rgba(74,58,49,0.6));
   padding:2rem 1rem 1rem;
   text-align:center;
 }
@@ -149,7 +157,7 @@ section{width:100%;position:relative;}
 
 /* QUOTE */
 .quote-section{
-  background:white;
+  background:#F7F1E6;
   padding:2rem 2.5rem;
   text-align:center;
 }
@@ -169,10 +177,10 @@ section{width:100%;position:relative;}
 
 /* NAME BLOCK */
 .name-block{
-  background:white;
+  background:#F7F1E6;
   padding:2rem 1rem 1.5rem;
   text-align:center;
-  border-top:1px solid rgba(201,122,142,0.15);
+  border-top:1px solid rgba(200,172,155,0.15);
 }
 .name-tag{
   font-family:'Montserrat',sans-serif;
@@ -188,7 +196,7 @@ section{width:100%;position:relative;}
 
 /* INVITE TEXT */
 .invite-text{
-  background:white;
+  background:#F7F1E6;
   padding:1.5rem 2.5rem 2rem;
   text-align:center;
   font-size:0.9rem;font-weight:300;
@@ -202,10 +210,10 @@ section{width:100%;position:relative;}
 
 /* DATE BLOCK */
 .date-block{
-  background:white;
+  background:#F7F1E6;
   padding:1.5rem 1rem 2rem;
   text-align:center;
-  border-top:1px solid rgba(201,122,142,0.1);
+  border-top:1px solid rgba(200,172,155,0.1);
 }
 .date-month{
   font-family:'Montserrat',sans-serif;
@@ -239,7 +247,7 @@ section{width:100%;position:relative;}
 
 /* COUNTDOWN */
 .countdown-block{
-  background:white;
+  background:#F7F1E6;
   padding:1rem 1rem 2rem;
   text-align:center;
 }
@@ -274,11 +282,11 @@ section{width:100%;position:relative;}
 /* PHOTO GRID */
 .photo-grid{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:3px;background:#e0c5cf;
+  gap:3px;background:#EADBC8;
 }
 .photo-grid .ph{
   height:180px;
-  background:linear-gradient(135deg,#f9dce6,#fce8f0);
+  background:linear-gradient(135deg,#FAD1BB,#F7F1E6);
   display:flex;align-items:center;justify-content:center;
   font-family:'Great Vibes',cursive;
   font-size:1.3rem;color:var(--rose);opacity:0.6;
@@ -287,7 +295,7 @@ section{width:100%;position:relative;}
 
 /* ── VENUE SECTION ── */
 .venue-section{
-  background:white;
+  background:#F7F1E6;
   padding:2rem 1.5rem;
   text-align:center;
 }
@@ -316,10 +324,10 @@ section{width:100%;position:relative;}
   font-size:0.65rem;letter-spacing:0.2em;
   text-transform:uppercase;
   text-decoration:none;cursor:pointer;border:none;
-  box-shadow:0 4px 20px rgba(192,74,106,0.3);
+  box-shadow:0 4px 20px rgba(122,90,72,0.3);
   transition:all 0.3s;
 }
-.venue-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(192,74,106,0.5);}
+.venue-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(122,90,72,0.5);}
 .venue-divider{
   width:80%;height:1px;
   background:linear-gradient(90deg,transparent,var(--blush),transparent);
@@ -328,7 +336,7 @@ section{width:100%;position:relative;}
 
 /* ── ITINERARY ── */
 .itinerary-section{
-  background:white;
+  background:#F7F1E6;
   padding:2rem 1.5rem;
 }
 .section-title{
@@ -353,7 +361,7 @@ section{width:100%;position:relative;}
   background:linear-gradient(135deg,var(--blush),var(--rose));
   display:flex;align-items:center;justify-content:center;
   font-size:1rem;flex-shrink:0;
-  box-shadow:0 2px 10px rgba(201,122,142,0.3);
+  box-shadow:0 2px 10px rgba(200,172,155,0.3);
   position:relative;z-index:1;
 }
 .tl-content{padding-top:0.3rem;}
@@ -370,7 +378,7 @@ section{width:100%;position:relative;}
 
 /* ── RSVP ── */
 .rsvp-section{
-  background:linear-gradient(160deg,#fff0f5,var(--cream));
+  background:linear-gradient(160deg,#efe7e4,var(--cream));
   padding:2rem 1.5rem;text-align:center;
 }
 .phone-icon{font-size:2rem;margin-bottom:0.5rem;}
@@ -383,14 +391,14 @@ section{width:100%;position:relative;}
   font-family:'Montserrat',sans-serif;
   font-size:0.7rem;letter-spacing:0.25em;
   text-transform:uppercase;cursor:pointer;border:none;
-  box-shadow:0 6px 25px rgba(192,74,106,0.35);
+  box-shadow:0 6px 25px rgba(122,90,72,0.35);
   transition:all 0.3s;
 }
-.rsvp-btn:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(204,31,160,0.5);}
+.rsvp-btn:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(163,133,114,0.5);}
 
 /* ── THANKS / FOOTER ── */
 .thanks-section{
-  background:white;
+  background:#F7F1E6;
   padding:2.5rem 1.5rem 3rem;
   text-align:center;
   border-top:1px solid var(--blush);
@@ -468,25 +476,25 @@ section{width:100%;position:relative;}
   <div class="floral-decor">
     <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
       <!-- left leaves -->
-      <ellipse cx="40" cy="45" rx="22" ry="10" fill="#c97a8e" opacity="0.25" transform="rotate(-30 40 45)"/>
-      <ellipse cx="25" cy="38" rx="18" ry="8" fill="#f0c4d0" opacity="0.4" transform="rotate(-50 25 38)"/>
+      <ellipse cx="40" cy="45" rx="22" ry="10" fill="#C8AC9B" opacity="0.25" transform="rotate(-30 40 45)"/>
+      <ellipse cx="25" cy="38" rx="18" ry="8" fill="#FAD1BB" opacity="0.4" transform="rotate(-50 25 38)"/>
       <!-- left flowers -->
-      <circle cx="60" cy="35" r="12" fill="#f0c4d0" opacity="0.5"/>
-      <circle cx="60" cy="35" r="7" fill="#c97a8e" opacity="0.6"/>
-      <circle cx="78" cy="28" r="9" fill="#f7d6e3" opacity="0.6"/>
-      <circle cx="78" cy="28" r="5" fill="#c04a6a" opacity="0.5"/>
+      <circle cx="60" cy="35" r="12" fill="#FAD1BB" opacity="0.5"/>
+      <circle cx="60" cy="35" r="7" fill="#C8AC9B" opacity="0.6"/>
+      <circle cx="78" cy="28" r="9" fill="#efe7e4" opacity="0.6"/>
+      <circle cx="78" cy="28" r="5" fill="#7A5A48" opacity="0.5"/>
       <!-- center divider -->
-      <line x1="100" y1="40" x2="140" y2="40" stroke="#c97a8e" stroke-width="0.8" opacity="0.4"/>
-      <path d="M155,40 C158,32 162,28 160,40 C162,28 166,32 169,40" fill="none" stroke="#c9a96e" stroke-width="1.2" opacity="0.7"/>
-      <line x1="175" y1="40" x2="215" y2="40" stroke="#c97a8e" stroke-width="0.8" opacity="0.4"/>
+      <line x1="100" y1="40" x2="140" y2="40" stroke="#C8AC9B" stroke-width="0.8" opacity="0.4"/>
+      <path d="M155,40 C158,32 162,28 160,40 C162,28 166,32 169,40" fill="none" stroke="#C8AC9B" stroke-width="1.2" opacity="0.7"/>
+      <line x1="175" y1="40" x2="215" y2="40" stroke="#C8AC9B" stroke-width="0.8" opacity="0.4"/>
       <!-- right flowers (mirror) -->
-      <circle cx="235" cy="28" r="9" fill="#f7d6e3" opacity="0.6"/>
-      <circle cx="235" cy="28" r="5" fill="#c04a6a" opacity="0.5"/>
-      <circle cx="253" cy="35" r="12" fill="#f0c4d0" opacity="0.5"/>
-      <circle cx="253" cy="35" r="7" fill="#c97a8e" opacity="0.6"/>
+      <circle cx="235" cy="28" r="9" fill="#efe7e4" opacity="0.6"/>
+      <circle cx="235" cy="28" r="5" fill="#7A5A48" opacity="0.5"/>
+      <circle cx="253" cy="35" r="12" fill="#FAD1BB" opacity="0.5"/>
+      <circle cx="253" cy="35" r="7" fill="#C8AC9B" opacity="0.6"/>
       <!-- right leaves -->
-      <ellipse cx="278" cy="38" rx="18" ry="8" fill="#f0c4d0" opacity="0.4" transform="rotate(50 278 38)"/>
-      <ellipse cx="293" cy="45" rx="22" ry="10" fill="#c97a8e" opacity="0.25" transform="rotate(30 293 45)"/>
+      <ellipse cx="278" cy="38" rx="18" ry="8" fill="#FAD1BB" opacity="0.4" transform="rotate(50 278 38)"/>
+      <ellipse cx="293" cy="45" rx="22" ry="10" fill="#C8AC9B" opacity="0.25" transform="rotate(30 293 45)"/>
     </svg>
   </div>
 
@@ -524,17 +532,17 @@ section{width:100%;position:relative;}
   </div>
 
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:white;">
+  <div class="floral-decor" style="background:#F7F1E6;">
     <svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
-      <ellipse cx="30" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(-40 30 35)"/>
-      <circle cx="55" cy="28" r="10" fill="#f0c4d0" opacity="0.55"/>
-      <circle cx="55" cy="28" r="6" fill="#c97a8e" opacity="0.55"/>
-      <circle cx="72" cy="22" r="7" fill="#f7d6e3" opacity="0.6"/>
-      <line x1="88" y1="30" x2="232" y2="30" stroke="#c97a8e" stroke-width="0.6" opacity="0.3"/>
-      <circle cx="248" cy="22" r="7" fill="#f7d6e3" opacity="0.6"/>
-      <circle cx="265" cy="28" r="10" fill="#f0c4d0" opacity="0.55"/>
-      <circle cx="265" cy="28" r="6" fill="#c97a8e" opacity="0.55"/>
-      <ellipse cx="290" cy="35" rx="20" ry="9" fill="#c97a8e" opacity="0.2" transform="rotate(40 290 35)"/>
+      <ellipse cx="30" cy="35" rx="20" ry="9" fill="#C8AC9B" opacity="0.2" transform="rotate(-40 30 35)"/>
+      <circle cx="55" cy="28" r="10" fill="#FAD1BB" opacity="0.55"/>
+      <circle cx="55" cy="28" r="6" fill="#C8AC9B" opacity="0.55"/>
+      <circle cx="72" cy="22" r="7" fill="#efe7e4" opacity="0.6"/>
+      <line x1="88" y1="30" x2="232" y2="30" stroke="#C8AC9B" stroke-width="0.6" opacity="0.3"/>
+      <circle cx="248" cy="22" r="7" fill="#efe7e4" opacity="0.6"/>
+      <circle cx="265" cy="28" r="10" fill="#FAD1BB" opacity="0.55"/>
+      <circle cx="265" cy="28" r="6" fill="#C8AC9B" opacity="0.55"/>
+      <ellipse cx="290" cy="35" rx="20" ry="9" fill="#C8AC9B" opacity="0.2" transform="rotate(40 290 35)"/>
     </svg>
   </div>
 
@@ -563,21 +571,21 @@ section{width:100%;position:relative;}
     <div class="venue-type">Poruwa Ceremony</div>
     <div class="venue-name">Hotel Sundara</div>
     <div class="venue-addr">Kaluthara , North</div>
-    <img src="ph1.webp" class="img-thumbnail" alt="Hotel" width="300px" height="300px" style="border-radius:12px;margin:0.8rem 0;box-shadow:0 6px 20px rgba(192,74,106,0.3);">
+    <img src="ph1.webp" class="img-thumbnail" alt="Hotel" width="300px" height="300px" style="border-radius:12px;margin:0.8rem 0;box-shadow:0 6px 20px rgba(122,90,72,0.3);">
     <a class="venue-btn" href="https://maps.app.goo.gl/hQUTHzQXDUtGswMS8?g_st=aw" target="_blank">📍 View Location</a>
 
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:white;border-top:1px solid rgba(201,122,142,0.1);">
+  <div class="floral-decor" style="background:#F7F1E6;border-top:1px solid rgba(200,172,155,0.1);">
     <svg viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
-      <circle cx="60" cy="40" r="15" fill="#f0c4d0" opacity="0.45"/>
-      <circle cx="60" cy="40" r="9" fill="#c04a6a" opacity="0.4"/>
-      <circle cx="82" cy="30" r="10" fill="#f7d6e3" opacity="0.5"/>
-      <ellipse cx="40" cy="50" rx="16" ry="7" fill="#c97a8e" opacity="0.2" transform="rotate(-35 40 50)"/>
-      <line x1="98" y1="38" x2="222" y2="38" stroke="#c97a8e" stroke-width="0.5" opacity="0.3"/>
-      <ellipse cx="280" cy="50" rx="16" ry="7" fill="#c97a8e" opacity="0.2" transform="rotate(35 280 50)"/>
-      <circle cx="238" cy="30" r="10" fill="#f7d6e3" opacity="0.5"/>
-      <circle cx="260" cy="40" r="15" fill="#f0c4d0" opacity="0.45"/>
-      <circle cx="260" cy="40" r="9" fill="#c04a6a" opacity="0.4"/>
+      <circle cx="60" cy="40" r="15" fill="#FAD1BB" opacity="0.45"/>
+      <circle cx="60" cy="40" r="9" fill="#7A5A48" opacity="0.4"/>
+      <circle cx="82" cy="30" r="10" fill="#efe7e4" opacity="0.5"/>
+      <ellipse cx="40" cy="50" rx="16" ry="7" fill="#C8AC9B" opacity="0.2" transform="rotate(-35 40 50)"/>
+      <line x1="98" y1="38" x2="222" y2="38" stroke="#C8AC9B" stroke-width="0.5" opacity="0.3"/>
+      <ellipse cx="280" cy="50" rx="16" ry="7" fill="#C8AC9B" opacity="0.2" transform="rotate(35 280 50)"/>
+      <circle cx="238" cy="30" r="10" fill="#efe7e4" opacity="0.5"/>
+      <circle cx="260" cy="40" r="15" fill="#FAD1BB" opacity="0.45"/>
+      <circle cx="260" cy="40" r="9" fill="#7A5A48" opacity="0.4"/>
     </svg>
   </div>
 
@@ -586,21 +594,21 @@ section{width:100%;position:relative;}
     <div class="section-title">— Schedule of Events —</div>
     <div class="timeline">
       <div class="tl-item">
-        <div class="tl-icon">💗</div>
+        <div class="tl-icon">🤍</div>
         <div class="tl-content">
           <div class="tl-time">09:12 AM</div>
           <div class="tl-label">Registration</div>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-icon">💗</div>
+        <div class="tl-icon">🤍</div>
         <div class="tl-content">
           <div class="tl-time">10:02 PM</div>
           <div class="tl-label">Poruwa ceremony</div>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-icon">💗</div>
+        <div class="tl-icon">🤍</div>
         <div class="tl-content">
           <div class="tl-time">04:00 PM</div>
           <div class="tl-label">Departure time</div>
@@ -609,20 +617,20 @@ section{width:100%;position:relative;}
     </div>
   </div>
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:linear-gradient(160deg,#fff0f5,white);border-top:1px solid rgba(201,122,142,0.1);">
+  <div class="floral-decor" style="background:linear-gradient(160deg,#efe7e4,#F7F1E6);border-top:1px solid rgba(200,172,155,0.1);">
     <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
-      <ellipse cx="35" cy="55" rx="25" ry="11" fill="#c97a8e" opacity="0.18" transform="rotate(-30 35 55)"/>
-      <ellipse cx="18" cy="45" rx="20" ry="9" fill="#f0c4d0" opacity="0.3" transform="rotate(-50 18 45)"/>
-      <circle cx="65" cy="38" r="14" fill="#f0c4d0" opacity="0.5"/>
-      <circle cx="65" cy="38" r="8" fill="#c97a8e" opacity="0.55"/>
-      <circle cx="88" cy="28" r="10" fill="#f7d6e3" opacity="0.6"/>
-      <circle cx="88" cy="28" r="6" fill="#c04a6a" opacity="0.45"/>
-      <circle cx="232" cy="28" r="10" fill="#f7d6e3" opacity="0.6"/>
-      <circle cx="232" cy="28" r="6" fill="#c04a6a" opacity="0.45"/>
-      <circle cx="255" cy="38" r="14" fill="#f0c4d0" opacity="0.5"/>
-      <circle cx="255" cy="38" r="8" fill="#c97a8e" opacity="0.55"/>
-      <ellipse cx="285" cy="45" rx="20" ry="9" fill="#f0c4d0" opacity="0.3" transform="rotate(50 285 45)"/>
-      <ellipse cx="302" cy="55" rx="25" ry="11" fill="#c97a8e" opacity="0.18" transform="rotate(30 302 55)"/>
+      <ellipse cx="35" cy="55" rx="25" ry="11" fill="#C8AC9B" opacity="0.18" transform="rotate(-30 35 55)"/>
+      <ellipse cx="18" cy="45" rx="20" ry="9" fill="#FAD1BB" opacity="0.3" transform="rotate(-50 18 45)"/>
+      <circle cx="65" cy="38" r="14" fill="#FAD1BB" opacity="0.5"/>
+      <circle cx="65" cy="38" r="8" fill="#C8AC9B" opacity="0.55"/>
+      <circle cx="88" cy="28" r="10" fill="#efe7e4" opacity="0.6"/>
+      <circle cx="88" cy="28" r="6" fill="#7A5A48" opacity="0.45"/>
+      <circle cx="232" cy="28" r="10" fill="#efe7e4" opacity="0.6"/>
+      <circle cx="232" cy="28" r="6" fill="#7A5A48" opacity="0.45"/>
+      <circle cx="255" cy="38" r="14" fill="#FAD1BB" opacity="0.5"/>
+      <circle cx="255" cy="38" r="8" fill="#C8AC9B" opacity="0.55"/>
+      <ellipse cx="285" cy="45" rx="20" ry="9" fill="#FAD1BB" opacity="0.3" transform="rotate(50 285 45)"/>
+      <ellipse cx="302" cy="55" rx="25" ry="11" fill="#C8AC9B" opacity="0.18" transform="rotate(30 302 55)"/>
     </svg>
   </div>
 
@@ -638,8 +646,8 @@ section{width:100%;position:relative;}
   </div>
 
   <!-- RSVP MODAL -->
-  <div id="rsvp-modal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(58,26,38,0.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
-    <div style="background:var(--cream);border-radius:20px;padding:2rem 1.5rem;width:90%;max-width:380px;box-shadow:0 20px 60px rgba(192,74,106,0.35);position:relative;animation:fadeUp 0.4s ease;">
+  <div id="rsvp-modal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(74,58,49,0.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+    <div style="background:var(--cream);border-radius:20px;padding:2rem 1.5rem;width:90%;max-width:380px;box-shadow:0 20px 60px rgba(122,90,72,0.35);position:relative;animation:fadeUp 0.4s ease;">
       <button onclick="closeRsvpModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--rose);line-height:1;">✕</button>
       <div style="text-align:center;margin-bottom:1.2rem;">
         <div style="font-size:1.5rem;margin-bottom:0.3rem;">💍</div>
@@ -658,17 +666,17 @@ section{width:100%;position:relative;}
         <!-- Name -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Your Name *</label>
-          <input id="rsvp-name" type="text" placeholder="Full name" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+          <input id="rsvp-name" type="text" placeholder="Full name" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
         </div>
         <!-- Phone -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Phone Number *</label>
-          <input id="rsvp-phone" type="tel" placeholder="+94 77 000 0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+          <input id="rsvp-phone" type="tel" placeholder="+94 77 000 0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
         </div>
         <!-- Guests -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Number of Guests (incl. yourself)</label>
-          <select id="rsvp-guests" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:white;outline:none;appearance:none;cursor:pointer;">
+          <select id="rsvp-guests" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;appearance:none;cursor:pointer;">
             <option value="1">1 – Just me</option>
             <option value="2">2 people</option>
             <option value="3">3 people</option>
@@ -679,12 +687,12 @@ section{width:100%;position:relative;}
         <!-- Message -->
         <div style="margin-bottom:1.2rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Message (optional)</label>
-          <textarea id="rsvp-message" rows="2" placeholder="Leave a wish for the couple…" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--dark);background:white;outline:none;resize:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'"></textarea>
+          <textarea id="rsvp-message" rows="2" placeholder="Leave a wish for the couple…" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--dark);background:#F7F1E6;outline:none;resize:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'"></textarea>
         </div>
         <!-- Error msg -->
         <div id="rsvp-error" style="display:none;color:var(--deep);font-family:'Montserrat',sans-serif;font-size:0.7rem;text-align:center;margin-bottom:0.8rem;"></div>
         <!-- Submit -->
-        <button onclick="submitRsvp()" id="rsvp-submit-btn" style="width:100%;padding:0.85rem;background:linear-gradient(135deg,var(--deep),var(--magenta));color:white;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 25px rgba(192,74,106,0.35);transition:opacity 0.2s;">♥ &nbsp; Confirm Attendance &nbsp; ♥</button>
+        <button onclick="submitRsvp()" id="rsvp-submit-btn" style="width:100%;padding:0.85rem;background:linear-gradient(135deg,var(--deep),var(--magenta));color:white;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 25px rgba(122,90,72,0.35);transition:opacity 0.2s;">♥ &nbsp; Confirm Attendance &nbsp; ♥</button>
       </div>
     </div>
   </div>
@@ -699,17 +707,17 @@ section{width:100%;position:relative;}
     <!-- Large floral decoration -->
     <div style="margin:1rem 0;">
       <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" style="width:180px;">
-        <ellipse cx="30" cy="70" rx="28" ry="12" fill="#c97a8e" opacity="0.2" transform="rotate(-35 30 70)"/>
-        <circle cx="55" cy="55" r="18" fill="#f0c4d0" opacity="0.5"/>
-        <circle cx="55" cy="55" r="11" fill="#c97a8e" opacity="0.5"/>
-        <circle cx="80" cy="42" r="13" fill="#f7d6e3" opacity="0.6"/>
-        <circle cx="80" cy="42" r="8" fill="#c04a6a" opacity="0.45"/>
-        <circle cx="100" cy="38" r="10" fill="#f0c4d0" opacity="0.6"/>
-        <circle cx="120" cy="42" r="13" fill="#f7d6e3" opacity="0.6"/>
-        <circle cx="120" cy="42" r="8" fill="#c04a6a" opacity="0.45"/>
-        <circle cx="145" cy="55" r="18" fill="#f0c4d0" opacity="0.5"/>
-        <circle cx="145" cy="55" r="11" fill="#c97a8e" opacity="0.5"/>
-        <ellipse cx="170" cy="70" rx="28" ry="12" fill="#c97a8e" opacity="0.2" transform="rotate(35 170 70)"/>
+        <ellipse cx="30" cy="70" rx="28" ry="12" fill="#C8AC9B" opacity="0.2" transform="rotate(-35 30 70)"/>
+        <circle cx="55" cy="55" r="18" fill="#FAD1BB" opacity="0.5"/>
+        <circle cx="55" cy="55" r="11" fill="#C8AC9B" opacity="0.5"/>
+        <circle cx="80" cy="42" r="13" fill="#efe7e4" opacity="0.6"/>
+        <circle cx="80" cy="42" r="8" fill="#7A5A48" opacity="0.45"/>
+        <circle cx="100" cy="38" r="10" fill="#FAD1BB" opacity="0.6"/>
+        <circle cx="120" cy="42" r="13" fill="#efe7e4" opacity="0.6"/>
+        <circle cx="120" cy="42" r="8" fill="#7A5A48" opacity="0.45"/>
+        <circle cx="145" cy="55" r="18" fill="#FAD1BB" opacity="0.5"/>
+        <circle cx="145" cy="55" r="11" fill="#C8AC9B" opacity="0.5"/>
+        <ellipse cx="170" cy="70" rx="28" ry="12" fill="#C8AC9B" opacity="0.2" transform="rotate(35 170 70)"/>
       </svg>
     </div>
 
@@ -729,12 +737,12 @@ section{width:100%;position:relative;}
 <script>
 // ── COVER PETALS ──
 const cover=document.getElementById('cover');
-const pc=['#f0c4d0','#c97a8e','#c04a6a','#e8a0b8','#f7d6e3'];
+const pc=['#FAD1BB','#C8AC9B','#FFD1DC','#EADBC8','#efe7e4'];
 for(let i=0;i<25;i++){
   const p=document.createElement('div');
   p.classList.add('cover-petal');
   const s=10+Math.random()*14;
-  p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 30%,#c04a6a 100%);animation-duration:${4+Math.random()*6}s;animation-delay:${Math.random()*6}s;`;
+  p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 30%,#C8AC9B 100%);animation-duration:${4+Math.random()*6}s;animation-delay:${Math.random()*6}s;`;
   cover.appendChild(p);
 }
 
@@ -749,7 +757,7 @@ function openInvitation(){
 
 // ── CONFETTI ──
 function spawnConfetti(){
-  const cc=['#f0c4d0','#c97a8e','#c04a6a','#cc1fa0','#c9a96e','#fff'];
+  const cc=['#FAD1BB','#C8AC9B','#FFD1DC','#EADBC8','#efe7e4','#C8AC9B'];
   for(let i=0;i<70;i++){
     const c=document.createElement('div');
     c.style.cssText=`
@@ -778,7 +786,7 @@ function startPetals(){
     const p=document.createElement('div');
     p.classList.add('petal');
     const s=8+Math.random()*12;
-    p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 40%,#c04a6a 100%);animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*8}s;`;
+    p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s*1.2}px;background:radial-gradient(ellipse,${pc[Math.floor(Math.random()*pc.length)]} 40%,#C8AC9B 100%);animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*8}s;`;
     main.appendChild(p);
   }
 }
@@ -798,6 +806,15 @@ function tick(){
 }
 setInterval(tick,1000); tick();
 
+// ── MUSIC ──
+let playing=false;
+function togglePlay(){
+  const a=document.getElementById('bgMusic');
+  const b=document.getElementById('playBtn');
+  if(playing){a.pause();b.textContent='▶';playing=false;}
+  else{a.play().catch(()=>{});b.textContent='⏸';playing=true;}
+}
+
 // ── RSVP MODAL ──
 function openRsvpModal(){
   const m=document.getElementById('rsvp-modal');
@@ -813,8 +830,14 @@ document.getElementById('rsvp-modal').addEventListener('click',function(e){
   if(e.target===this) closeRsvpModal();
 });
 
-// ── Emails are delivered here (via FormSubmit.co – no backend needed) ──
-const RSVP_EMAIL = 'yovinmaranawaka@gmail.com';
+// ══════════════════════════════════════════════════════════
+//  RSVP SETTINGS
+//  Paste your Google Apps Script "Web app URL" between the quotes.
+//  (See SETUP-GUIDE.txt)  Example:
+//  'https://script.google.com/macros/s/AKfycb.../exec'
+// ══════════════════════════════════════════════════════════
+const SHEET_URL  = '';
+const RSVP_EMAIL = 'yovinmaranawaka@gmail.com';   // backup email (used only if SHEET_URL is empty)
 
 async function submitRsvp(){
   const name    = document.getElementById('rsvp-name').value.trim();
@@ -832,36 +855,65 @@ async function submitRsvp(){
   btn.textContent='Sending…'; btn.disabled=true; btn.style.opacity='0.7';
 
   try {
-    const res = await fetch('https://formsubmit.co/ajax/' + RSVP_EMAIL, {
-      method : 'POST',
-      headers: {'Content-Type':'application/json','Accept':'application/json'},
-      body   : JSON.stringify({
-        _subject : 'Wedding RSVP: ' + name + ' (' + guests + ' guest' + (guests>1?'s':'') + ')',
-        _template: 'table',
-        _captcha : 'false',
-        Name     : name,
-        Phone    : phone,
-        Guests   : guests,
-        Message  : message || '(no message)'
-      })
-    });
-    const data = await res.json();
+    let ok = false, total = null;
 
-    if(res.ok && (data.success === true || data.success === 'true')){
-      spawnConfetti();
-      document.getElementById('rsvp-form-wrap').style.display='none';
-      document.getElementById('success-name').textContent='Thank you, '+name+'!';
-      document.getElementById('success-totals').textContent='Your attendance has been confirmed ♥';
-      document.getElementById('rsvp-success').style.display='block';
+    if(SHEET_URL){
+      // Save to Google Sheet (Excel) + email notification
+      const res  = await fetch(SHEET_URL, {
+        method:'POST',
+        body: JSON.stringify({ name, phone, guests: parseInt(guests), message })
+      });
+      const data = await res.json();
+      ok = data.success === true;
+      if(ok) total = data.total_guests;
+      else throw new Error(data.error || 'Failed');
     } else {
-      throw new Error(data.message || 'Failed');
+      // Fallback: email only
+      const res = await fetch('https://formsubmit.co/ajax/' + RSVP_EMAIL, {
+        method :'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body   : JSON.stringify({
+          _subject:'Wedding RSVP: '+name+' ('+guests+' guest'+(guests>1?'s':'')+')',
+          _template:'table', _captcha:'false',
+          Name:name, Phone:phone, Guests:guests, Message:message||'(no message)'
+        })
+      });
+      const data = await res.json();
+      ok = res.ok && (data.success===true || data.success==='true');
+      if(!ok) throw new Error('Failed');
     }
+
+    spawnConfetti();
+    document.getElementById('rsvp-form-wrap').style.display='none';
+    document.getElementById('success-name').textContent='Thank you, '+name+'!';
+    document.getElementById('success-totals').textContent =
+      total ? total+' guests confirmed so far ♥' : 'Your attendance has been confirmed ♥';
+    document.getElementById('rsvp-success').style.display='block';
+    if(total) updateCounter(total);
+
   } catch(err){
     errEl.textContent='Could not send. Please check your connection and try again.';
     errEl.style.display='block';
     btn.textContent=label; btn.disabled=false; btn.style.opacity='1';
   }
 }
+
+// ── LIVE GUEST COUNTER (reads total from the Google Sheet) ──
+function updateCounter(guests){
+  const el = document.getElementById('counter-text');
+  if(el) el.textContent = guests > 0
+    ? '✦  '+guests+' guests confirmed so far  ✦'
+    : 'Be the first to confirm!';
+}
+async function loadCounter(){
+  if(!SHEET_URL) return;
+  try{
+    const r = await fetch(SHEET_URL);
+    const d = await r.json();
+    if(d.success) updateCounter(d.total_guests);
+  } catch(e){ /* silent */ }
+}
+loadCounter();
 </script>
 </body>
 </html>
