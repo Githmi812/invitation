@@ -16,6 +16,7 @@
   --paper:    #F7F1E6;
   --sand:     #ffe0df;
   --blush:    #FFD1DC;
+  --bg:       #FDF0F5;   /* MAIN BACKGROUND – change this one line */
   /* Mapped names used across the page */
   --cream:    #efe7e4;
   --gold:     #C8AC9B;
@@ -29,7 +30,7 @@
 
 html{scroll-behavior:smooth;}
 body {
-  background: #EADBC8;
+  background: var(--bg);
   font-family: 'Cormorant Garamond', serif;
   display: flex;
   justify-content: center;
@@ -52,11 +53,11 @@ body::before {
 .phone{
   width:100%;
   max-width:420px;
-  background:var(--cream);
+  background:var(--bg);
   min-height:100vh;
   position:relative;
   overflow:hidden;
-  box-shadow:0 0 60px rgba(0,0,0,0.3);
+  box-shadow:0 0 40px rgba(122,90,72,0.12);
 }
 
 /* ── COVER ── */
@@ -157,7 +158,7 @@ section{width:100%;position:relative;}
 
 /* QUOTE */
 .quote-section{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:2rem 2.5rem;
   text-align:center;
 }
@@ -177,7 +178,7 @@ section{width:100%;position:relative;}
 
 /* NAME BLOCK */
 .name-block{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:2rem 1rem 1.5rem;
   text-align:center;
   border-top:1px solid rgba(200,172,155,0.15);
@@ -196,7 +197,7 @@ section{width:100%;position:relative;}
 
 /* INVITE TEXT */
 .invite-text{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:1.5rem 2.5rem 2rem;
   text-align:center;
   font-size:0.9rem;font-weight:300;
@@ -210,7 +211,7 @@ section{width:100%;position:relative;}
 
 /* DATE BLOCK */
 .date-block{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:1.5rem 1rem 2rem;
   text-align:center;
   border-top:1px solid rgba(200,172,155,0.1);
@@ -247,7 +248,7 @@ section{width:100%;position:relative;}
 
 /* COUNTDOWN */
 .countdown-block{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:1rem 1rem 2rem;
   text-align:center;
 }
@@ -282,7 +283,7 @@ section{width:100%;position:relative;}
 /* PHOTO GRID */
 .photo-grid{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:3px;background:#EADBC8;
+  gap:3px;background:var(--bg);
 }
 .photo-grid .ph{
   height:180px;
@@ -295,7 +296,7 @@ section{width:100%;position:relative;}
 
 /* ── VENUE SECTION ── */
 .venue-section{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:2rem 1.5rem;
   text-align:center;
 }
@@ -336,7 +337,7 @@ section{width:100%;position:relative;}
 
 /* ── ITINERARY ── */
 .itinerary-section{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:2rem 1.5rem;
 }
 .section-title{
@@ -378,7 +379,7 @@ section{width:100%;position:relative;}
 
 /* ── RSVP ── */
 .rsvp-section{
-  background:linear-gradient(160deg,#efe7e4,var(--cream));
+  background:var(--bg);
   padding:2rem 1.5rem;text-align:center;
 }
 .phone-icon{font-size:2rem;margin-bottom:0.5rem;}
@@ -398,7 +399,7 @@ section{width:100%;position:relative;}
 
 /* ── THANKS / FOOTER ── */
 .thanks-section{
-  background:#F7F1E6;
+  background:var(--bg);
   padding:2.5rem 1.5rem 3rem;
   text-align:center;
   border-top:1px solid var(--blush);
@@ -532,7 +533,7 @@ section{width:100%;position:relative;}
   </div>
 
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:#F7F1E6;">
+  <div class="floral-decor" style="background:var(--bg);">
     <svg viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
       <ellipse cx="30" cy="35" rx="20" ry="9" fill="#C8AC9B" opacity="0.2" transform="rotate(-40 30 35)"/>
       <circle cx="55" cy="28" r="10" fill="#FAD1BB" opacity="0.55"/>
@@ -575,7 +576,7 @@ section{width:100%;position:relative;}
     <a class="venue-btn" href="https://maps.app.goo.gl/hQUTHzQXDUtGswMS8?g_st=aw" target="_blank">📍 View Location</a>
 
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:#F7F1E6;border-top:1px solid rgba(200,172,155,0.1);">
+  <div class="floral-decor" style="background:var(--bg);border-top:1px solid rgba(200,172,155,0.1);">
     <svg viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
       <circle cx="60" cy="40" r="15" fill="#FAD1BB" opacity="0.45"/>
       <circle cx="60" cy="40" r="9" fill="#7A5A48" opacity="0.4"/>
@@ -617,7 +618,7 @@ section{width:100%;position:relative;}
     </div>
   </div>
   <!-- FLORAL -->
-  <div class="floral-decor" style="background:linear-gradient(160deg,#efe7e4,#F7F1E6);border-top:1px solid rgba(200,172,155,0.1);">
+  <div class="floral-decor" style="background:var(--bg);border-top:1px solid rgba(200,172,155,0.1);">
     <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
       <ellipse cx="35" cy="55" rx="25" ry="11" fill="#C8AC9B" opacity="0.18" transform="rotate(-30 35 55)"/>
       <ellipse cx="18" cy="45" rx="20" ry="9" fill="#FAD1BB" opacity="0.3" transform="rotate(-50 18 45)"/>
@@ -647,7 +648,7 @@ section{width:100%;position:relative;}
 
   <!-- RSVP MODAL -->
   <div id="rsvp-modal" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(74,58,49,0.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
-    <div style="background:var(--cream);border-radius:20px;padding:2rem 1.5rem;width:90%;max-width:380px;box-shadow:0 20px 60px rgba(122,90,72,0.35);position:relative;animation:fadeUp 0.4s ease;">
+    <div style="background:var(--bg);border-radius:20px;padding:2rem 1.5rem;width:90%;max-width:380px;box-shadow:0 20px 60px rgba(122,90,72,0.35);position:relative;animation:fadeUp 0.4s ease;">
       <button onclick="closeRsvpModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--rose);line-height:1;">✕</button>
       <div style="text-align:center;margin-bottom:1.2rem;">
         <div style="font-size:1.5rem;margin-bottom:0.3rem;">💍</div>
@@ -666,17 +667,17 @@ section{width:100%;position:relative;}
         <!-- Name -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Your Name *</label>
-          <input id="rsvp-name" type="text" placeholder="Full name" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+          <input id="rsvp-name" type="text" placeholder="Full name" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:var(--bg);outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
         </div>
         <!-- Phone -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Phone Number *</label>
-          <input id="rsvp-phone" type="tel" placeholder="+94 77 000 0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
+          <input id="rsvp-phone" type="tel" placeholder="+94 77 000 0000" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:var(--bg);outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'">
         </div>
         <!-- Guests -->
         <div style="margin-bottom:0.9rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Number of Guests (incl. yourself)</label>
-          <select id="rsvp-guests" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:#F7F1E6;outline:none;appearance:none;cursor:pointer;">
+          <select id="rsvp-guests" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:50px;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);background:var(--bg);outline:none;appearance:none;cursor:pointer;">
             <option value="1">1 – Just me</option>
             <option value="2">2 people</option>
             <option value="3">3 people</option>
@@ -687,7 +688,7 @@ section{width:100%;position:relative;}
         <!-- Message -->
         <div style="margin-bottom:1.2rem;">
           <label style="display:block;font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--rose);margin-bottom:0.4rem;">Message (optional)</label>
-          <textarea id="rsvp-message" rows="2" placeholder="Leave a wish for the couple…" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--dark);background:#F7F1E6;outline:none;resize:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'"></textarea>
+          <textarea id="rsvp-message" rows="2" placeholder="Leave a wish for the couple…" style="width:100%;padding:0.65rem 0.9rem;border:1px solid var(--blush);border-radius:16px;font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--dark);background:var(--bg);outline:none;resize:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='var(--deep)'" onblur="this.style.borderColor='var(--blush)'"></textarea>
         </div>
         <!-- Error msg -->
         <div id="rsvp-error" style="display:none;color:var(--deep);font-family:'Montserrat',sans-serif;font-size:0.7rem;text-align:center;margin-bottom:0.8rem;"></div>
